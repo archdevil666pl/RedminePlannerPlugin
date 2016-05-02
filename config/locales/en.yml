@@ -5,6 +5,7 @@ en:
   permission_planner_admin: Administer Resource Plan
   permission_planner_task_create: Create Task
   permission_planner_requests: Create Requests
+  permission_planner_own_requests: Create own Requests
 
   label_planner_menu_main: Resource Planner
   label_planner_planning: Planning

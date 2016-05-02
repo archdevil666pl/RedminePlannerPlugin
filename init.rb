@@ -27,6 +27,12 @@ Redmine::Plugin.register :planner do
       :plan_details => [:index, :create, :destroy]
     }
 
+    permission :planner_own_requests, {
+      :plan_requests => [
+        :new, :create, :edit, :update, :destroy, :send_request],
+      :plan_details => [:index, :create, :destroy]
+    }
+
     permission :planner_task_create, {
       :plan_tasks => [:new, :create, :edit, :update]
     }

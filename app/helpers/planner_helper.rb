@@ -26,4 +26,14 @@ module PlannerHelper
     ret = ret.merge request_states_link_args(states)
     ret
   end
+
+  def resources_for_plan_request_select
+    current = User.current
+    if current.allowed_to?(:planner_own_requests, @project) &&
+        (not current.allowed_to?(:planner_requests, @project)) &&
+        (not current.allowed_to?(:planner_admin, @project))
+      return [ [ current.name, current.id ] ]
+    end
+    return @project.users.sort.collect {|p| [ p.name, p.id ] }
+  end
 end

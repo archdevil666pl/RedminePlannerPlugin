@@ -3,7 +3,7 @@
 
 <div class="box tabular">
   <p>
-    <%= f.select :resource_id, @project.users.sort.collect {|p| [ p.name, p.id ] },
+    <%= f.select :resource_id, resources_for_plan_request_select,
      :include_blank => false, :label => :field_planner_req_resource %>
   </p>
   <p>

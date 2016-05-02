@@ -120,7 +120,8 @@ class PlanRequestsController < ApplicationController
   def can_create_request?
     current = User.current
     current.allowed_to?(:planner_requests, @project) ||
-      current.allowed_to?(:planner_admin, @project)
+      current.allowed_to?(:planner_admin, @project) ||
+      current.allowed_to?(:planner_own_requests, @project)
   end
 private
   def find_plan_request
